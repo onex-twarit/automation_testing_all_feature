@@ -1,0 +1,51 @@
+{
+  "SA": {
+    "url": "http://localhost:8000",
+    "sausername": "onexsa",
+    "sapassworddefault": "Onextel@123",
+    "sapasswordnew": "Onexsa@1234",
+    "mastercredits": "500000"
+  },
+  "TA": {
+    "url": "http://localhost:8000",
+    "tenant_name": "onexadmin",
+    "description": "testing",
+    "child_tuc": "10",
+    "smpps": "20",
+    "sms_api": "20",
+    "user": "tenant1admin12",
+    "ta_pass": "Onexta@123",
+    "ta_new_password": "Onextel@12",
+    "fname": "FirstAdmin",
+    "lname": "second",
+    "email": "ta121@onex.in",
+    "mobileno": "9012345678",
+    "company": "onexdemo",
+    "website": "www.onexdemo.com",
+    "userrole": "Tenant Admin",
+    "tenantcredits": "100000"
+  },
+  "TUC": {
+    "url": "http://localhost:8000/",
+    "ta_username": "Onexadmin",
+    "ta_invalid_pass": "Onextel@12",
+    "ta_password": "Onextel@123",
+    "tuc_username": "newTuc1",
+    "tuc_name": "newTuc1",
+    "tuc_invalid_pass": "Onextel@12",
+    "tuc_password": "password",
+    "password": "password",
+    "new_password": "Onextel@123",
+    "validity": "30",
+    "child_tuc_": "100",
+    "s_mpps": "50",
+    "sms_api_": "50",
+    "first_name": "newTuc1",
+    "last_name": "User",
+    "email": "email@gmail.com",
+    "mob_num": "6375418252",
+    "comp_name": "onextel",
+    "web": "web@web.com",
+    "credits_tuc": "5000"
+  }
+}
