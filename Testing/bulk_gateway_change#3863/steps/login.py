@@ -1,0 +1,68 @@
+from behave import *
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.select import Select
+
+service = Service(executable_path='/home/twarit/Downloads/chromedriver-linux64/chromedriver')
+options = webdriver.ChromeOptions()
+driver = webdriver.Chrome(service=service, options=options)
+
+
+@given(u'launch chrome browser')
+def ChromeBrowserLaunch(context):
+    try:
+        time.sleep(0.5)
+        context.driver = driver
+        context.driver.maximize_window()
+    except NameError:
+        print("Chrome browser did not open")
+    else:
+        print("Chrome browser open successfully")
+
+
+@when(u'open Onextel Homepage "{homepage}"')
+def OpenHomepage(context, homepage):
+    context.driver.maximize_window()
+    try:
+        context.driver.get(homepage)
+    except NameError:
+        print(f"{homepage} unable to load")
+    else:
+        print(f"{homepage} loaded successfully")
+
+
+@then(u'Enter Username "{user}" and password "{pwd}"')
+def step_impl(context, user, pwd):
+    context.driver.maximize_window()
+    time.sleep(1)
+    context.driver.find_element(By.ID, "email").send_keys(user)
+    context.driver.find_element(By.ID, "password").send_keys(pwd)
+
+
+@then(u'Check Terms And Conditions Check Box is preselected')
+def step_impl(context):
+    checkbox = context.driver.find_element(By.XPATH, "/html/body/div/div/div[2]/div[3]/label/input").is_selected()
+    if checkbox:
+        assert True, f"Check box is selected"
+    else:
+        assert False, f"Check box is not selected"
+
+
+@then(u'Click on login button')
+def step_impl(context):
+    context.driver.implicitly_wait(20)
+    button = context.driver.find_element(By.ID, "login_button")
+    context.driver.execute_script("arguments[0].click();", button)
+
+
+def clickables(value):
+    button = driver.find_element(By.XPATH, value)
+    driver.execute_script("arguments[0].click();", button)
+
+
+@then(u'Close driver window')
+def step_impl(context):
+    time.sleep(0.5)
+    context.driver.quit()

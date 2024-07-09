@@ -1,0 +1,17 @@
+behave bulk_gateway_change#3863/login.feature
+
+behave bulk_gateway_change#3863/ verify_labels_gateway_tab.feature
+
+behave bulk_gateway_change#3863/verify_labels_smppc_tab.feature
+
+behave bulk_gateway_change#3863/check_smppc_binded_or_not.feature
+
+behave bulk_gateway_change#3863/add_gateway_Vodafone_in_tuc.feature
+
+behave bulk_gateway_change#3863/send_messages_using_Vodafone_GW.feature
+
+behave bulk_gateway_change#3863/change_GW_from_207_to_208.feature
+
+behave bulk_gateway_change#3863/send_messages_using_1_GW.feature
+
+
